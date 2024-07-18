@@ -9,7 +9,7 @@ import {
   } from "react-native";
   
   import React, { useState } from "react";
-  import { colors, network } from "@/constants";
+  import { network } from "@/constants";
   import CustomInput from "../../components/CustomInput";
   import header_logo from "../../assets/logo/logo.jpg";
   import CustomButton from "../../components/CustomButton";
@@ -17,7 +17,22 @@ import {
   import ProgressDialog from "react-native-progress-dialog";
   import InternetConnectionAlert from "react-native-internet-connection-alert";
   import AsyncStorage from "@react-native-async-storage/async-storage";
-  
+  const colors = {
+    primary: "#FB6831",
+    primary_light: "#FFC8B2",
+    primary_shadow: "#FB6A04",
+    secondary: "#31C4FB",
+    tertiary: "#AEE8FD",
+    success: "#90ee90",
+    danger: "#FF4848",
+    shadow: "#E7E8EA",
+    warning: "#FBD431",
+    info: "#F8F9FA",
+    light: "#F5F5F5",
+    dark: "#343A3F",
+    muted: "#707981",
+    white: "#FFFFFF",
+  };
   const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,7 +45,7 @@ import {
         AsyncStorage.setItem("authUser", JSON.stringify(user));
       } catch (error) {
         console.log(error);
-        setError(error);
+        setError(error.message);
       }
     };
   
@@ -48,6 +63,7 @@ import {
       body: raw,
       redirect: "follow",
     };
+  
   
     //method to validate the user credentials and navigate to Home Screen / Dashboard
     const loginHandle = () => {
@@ -206,6 +222,7 @@ import {
     logo: {
       resizeMode: "contain",
       width: 80,
+      borderRadius:10,
     },
     welcomeText: {
       fontSize: 42,

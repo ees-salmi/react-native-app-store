@@ -6,12 +6,18 @@ import HeaderTabs from '@/components/HeaderTabs';
 import { Header } from '@/components/headers';
 import ProductDetails from '@/components/products/ProductDetails';
 import ProductsList from '@/screens/ProductsList';
+import LoginScreen from '@/screens/auth/LoginScreen';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
+      <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{title: 'login'}}
+        />
         <Stack.Screen
           name="Home"
           component={Home}

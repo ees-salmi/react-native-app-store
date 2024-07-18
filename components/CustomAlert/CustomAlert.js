@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   alertContainer_error: {
-    backgroundColor: colors.danger,
+    backgroundColor: "#FF4848",
   },
   alertContainer_success: {
-    backgroundColor: colors.success,
+    backgroundColor: "#FF4848",
   },
 });
