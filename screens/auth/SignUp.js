@@ -165,7 +165,7 @@ import {
           <View style={styles.bottomContainer}>
             <Text>Already have an account?</Text>
             <Text
-              onPress={() => navigation.navigate("login")}
+              onPress={() => navigation.navigate("LoginScreen")}
               style={styles.signupText}
             >
               Login
